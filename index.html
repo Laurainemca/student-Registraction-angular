@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+	<STYLE type="text/css">
+    .H1{
+  text-align: left;
+    color: Blue;
+    }
+    .login100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 50px;
+  background-color: #bd59d4;
+  border-radius: 25px;
+
+  font-family: SourceSansPro-SemiBold;
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+
+  box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
+  -moz-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
+  -webkit-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
+  -o-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
+  -ms-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
+}
+.login100-form-btn:hover {
+  background-color: #4b2354;
+  box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
+  -moz-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
+  -webkit-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
+  -o-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
+  -ms-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
+}
+   </STYLE>
+    
+	<title>Lauraine</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="util.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	
+	<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+		 <script type="text/ng-template" id="pages/about.html">
+      <h1 style="color:red">Welcome to student Registraction</h1>
+      
+      
+    </script>
+			<script type="text/ng-template" id="pages/home.html">
+      <center><h1 style="color:red">Student Details</h1></center><br><br>
+	  <form class="login100-form validate-form">
+	  <table align='center' class="wrap-input100 validate-input m-b-20">
+	  <tr><td style="color:blue;">First name :</td><td><input type="text" placeholder="eg :lauraine"  ng-model="name" ng-required="true"/></td></tr>
+	  <tr><td style="color:blue;">Roll num :</td><td><input type="text" placeholder="eg :mca302" ng-model="roll"  ng-required="true"/></td></tr>
+	  <tr><td style="color:blue;">Email id :</td><td><input type="text" placeholder="eg :abc@rajagiri.com" pattern="[a-zA-Z\s]{1,100}{@,#,.}" ng-model="email" ng-required="true"/></td></tr>
+	  <tr><td><button class="login100-form-btn">submitt</button></tr>
+	  </table></form>
+    </script>
+
+    <script type="text/ng-template" id="pages/reg.html">
+      <center><h1 style="color:red">Registraction Form</h1><br><br></center>
+	  <form class="login100-form validate-form">
+	  <table align='center' >
+	  <tr><td>MCA Marks</td></tr>
+	  <tr>
+	  <td style="color:blue;">Semester 1 :</td><td><input type="text"  placeholder="mark"  required pattern="[0-9]{2}" ng-model="s1" /> </td></tr>
+	  <tr><td style="color:blue;">Semester 2 :</td><td> <input type="text" placeholder="mark" required ng-model="s2" pattern="[0-9]{2}" /></td></tr>
+	  <tr><td  style="color:blue;">Semester 3 :</td><td><input type="text" placeholder="mark" required ng-model="s3" pattern="[0-9]{2}" /></td></tr>
+	  <tr><td style="color:blue;">Semester 4 :</td><td><input type="text" placeholder="mark" required ng-model="s4" pattern="[0-9]{2}" /></td></tr>
+	  <tr><td style="color:green;"><label class="text" for="">Aggregate : {{ ((s1*1)+(s2*1)+(s3*1)+(s4*1))/4 }}</label></td></tr>
+	  <tr>
+	  <td><label class="text" for="" style="color:blue;">Programing languages known:</label>
+                <input class="" type="checkbox" name="" class="form-control" id="" required><span class="checkmark">C</span>&nbsp;&nbsp;&nbsp;
+                
+                <input class="" type="checkbox" name="" class="form-control" id="" required><span class="checkmark">CPP</span>&nbsp;&nbsp;&nbsp;
+                
+                <input class="" type="checkbox" name="" class="form-control" id="" required><span class="checkmark">JAVA</span>&nbsp;&nbsp;&nbsp;<br>
+                
+                <input class="" type="checkbox" name="" class="form-control" id="" required><span class="checkmark">Python</span>&nbsp;&nbsp;&nbsp;
+                
+                <input class="" type="checkbox" name="" class="form-control" id="" required><span class="checkmark">C#</span>&nbsp;&nbsp;&nbsp;
+                
+                <input class="" type="checkbox" name="" class="form-control" id="" required><span class="checkmark">R</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+	  <tr><td style="color:blue;">Extra-curricular Activity:</td><td> <textarea ng-model="Extra" placeholder="activity" ng-required="true"></textarea></td></tr>
+	  <tr><td><button class="login100-form-btn">submit</button></tr>
+	  </table>
+      </form>
+    </script>
+
+   
+
+     <a href="#/about">welcome</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="#/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="#/reg">Registraction</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    
+
+    <div ng-view></div>
+
+    <script src="app.js"></script>
+
+			
+		</div>
+	</div>
+	
+	
+	
+<!--===============================================================================================-->
+	<script src="jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="popper.js"></script>
+	<script src="bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="moment.min.js"></script>
+	<script src="daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="countdowntime.js"></script>
+<!--===============================================================================================-->
+	
+</body>
+</html>
